@@ -6,16 +6,23 @@
   display: inline-block;
   margin-bottom: 20px;
   text-decoration: none;
-  color: blue;
+  color: #0077cc;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .subNav a {
   margin-right: 15px;
   text-decoration: none;
-  color: gray;
+  color: #555;
 }
 
 .subNav a.active {
   font-weight: bold;
-  color: black;
+  color: #000;
 }

@@ -1,25 +1,22 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams, Outlet, NavLink, useLocation } from 'react-router-dom';
+import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/tmdbApi';
 import styles from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
     const { movieId } = useParams();
+    const location = useLocation();
+    const backLinkRef = useRef(location.state?.from ?? '/movies');
+
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const location = useLocation();
-    const backLinkRef = useRef(location.state?.from ?? '/movies');
-
     useEffect(() => {
         setLoading(true);
         fetchMovieDetails(movieId)
-            .then(data => {
-                setMovie(data);
-                setError(null);
-            })
-            .catch(() => setError('Failed to load movie details.'))
+            .then(data => setMovie(data))
+            .catch(() => setError('Failed to load movie details'))
             .finally(() => setLoading(false));
     }, [movieId]);
 
@@ -32,6 +29,15 @@ export default function MovieDetailsPage() {
             <NavLink to={backLinkRef.current} className={styles.backLink}>
                 &larr; Go back
             </NavLink>
+
+            {/* Film Afişi */}
+            {movie.poster_path && (
+                <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                    className={styles.poster}
+                />
+            )}
 
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
