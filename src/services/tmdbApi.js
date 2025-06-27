@@ -3,7 +3,8 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
-const TOKEN = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTkyN2MxNGVkOGI5YjI0ZmY3MmJlYTJjMzY4Nzg1ZSIsIm5iZiI6MTc0MzcwMzkwNC44NDQsInN1YiI6IjY3ZWVjZjYwMmY3ZDQzNzAyNzk5MTRmMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HuarCRZGgwY46-WSimZbpjySgB7DoxZ3JuJZuPmryIYgit a';
+
+const TOKEN = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTkyN2MxNGVkOGI5YjI0ZmY3MmJlYTJjMzY4Nzg1ZSIsIm5iZiI6MTc0MzcwMzkwNC44NDQsInN1YiI6IjY3ZWVjZjYwMmY3ZDQzNzAyNzk5MTRmMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HuarCRZGgwY46-WSimZbpjySgB7DoxZ3JuJZuPmryIY';
 const headers = {
     headers: { Authorization: TOKEN },
 };
