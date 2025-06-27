@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: blue;
+}
+
+.subNav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: gray;
+}
+
+.subNav a.active {
+  font-weight: bold;
+  color: black;
+}
